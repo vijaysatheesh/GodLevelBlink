@@ -15,7 +15,7 @@ ISR(TIMER1_COMPA_vect){
 int main()
 {
 
-  DDRB |= _BV(PORT5);
+  DDRB |= _BV(PORT5); // Data direction register for port b
 
   OCR1A = COUNTER_VALUE; // Output compare register for timer 1
 
