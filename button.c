@@ -15,7 +15,9 @@ ISR(TIMER1_COMPA_vect)
 int main()
 {
 
-    DDRB |= ~_BV(PORTB0);
+    DDRB &= ~_BV(PORTB0);
+    PORTB |= _BV(PORTB0);
+    
     DDRB |= _BV(PORTB5);
     OCR1A = COUNTER_VALUE; // Output compare register for timer 1
 
@@ -33,7 +35,7 @@ int main()
 
     while (true)
     {
-        PORTB |= _BV(PORTB0);
+        
 
         if (!(PINB & _BV(PORTB0)))
         {

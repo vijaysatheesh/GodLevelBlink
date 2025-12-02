@@ -4,7 +4,7 @@ CFLAGS= -Os -DF_CPU=16000000UL -mmcu=atmega328p
 
 all:button.out # chanage this to change code.
 
-USBPORT:=$(shell ls /dev/ttyUSB*)
+USBPORT:=$(shell ls /dev/ttyACM*)
 
 %.out: %.c
 	$(CC) $(CFLAGS) $< -o $@
